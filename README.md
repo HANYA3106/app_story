@@ -5,7 +5,8 @@
 
 URL:
 
-テスト用アカウント:
+テスト用アカウント: Email -> sample@sample.com  
+										password -> sample3
 
 利用方法: ログインして物語を作り、それを他の人に読んでもらいシェアしたりコメントをもらえる。
 ただ作るだけでは面白くないので、ランダムに表示されるお題をジャンルにそった物語で作ってもらう。
@@ -31,4 +32,104 @@ URL:
 	|カテゴリー検索	|読みたいカテゴリーの話を探せる	|カテゴリー検索をトップページから行える様にする	|category コントローラーを作りview でそのカテゴリーが表示されるページをshow で作成	|10時間|
 	|お気に入りボタンの実装|	イイ話だと思ったらお気に入りにして、他の人に知らせる	|お気に入りボタンを作り、クリックする事で数字をカウントさせ表示する	|likeテーブルを作りstoryとuserをつなげる|	10時間|
 
+実装した機能: 
+	コメント機能： 読んだ人から感想をもらえる
+	お気に入り機能： 気に入ってもらえればボタンを押してもらい、その数が多ければより皆に見てもらえる。
+	https://gyazo.com/41a672898b7fcecce3f98780a8a6009b
+	https://gyazo.com/cdf8370eced6d2a1dc7eb3595f3814fd
 
+実装予定の機能： 制作時や詳細、編集にて文字のフォントを調節出来たり、背景の色や画像を変えられる様にしたい。
+
+ER図:
+
+#user
+| Column             | Type   | Option                         |
+| ------------------ | ------ | ------------------------------ |
+| nickname           | string | null: false , default: ""      |
+| email              | string | null: false, foreign_key: true |
+| encrypted_password | string | null: false, foreign_key: true |
+
+	has_many :stories
+  has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+
+
+
+#image
+| Column      | Type       | Option                         |
+| ----------- | ---------- | ------------------------------ |
+| subject_id  | integer    | null: false                    |
+| purpose_id  | integer    | null: false                    |
+| tale_id     | integer    | null: false                    |
+| category_id | integer    | null: false                    |
+| text        | text       | null: false                    |
+| user        | references | null: false, foreign_key: true |
+
+	belongs_to :user
+  has_one :category
+  has_one :subject
+  has_one :purpose
+  has_one :tale
+  has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
+
+
+#category
+| Column | Type   | Option      |
+| ------ | ------ | ----------- |
+| genre  | string | null: false |
+| image  | text   |             |
+
+belongs_to :story
+
+#tale
+| Column  | Type   | Option |
+| ------- | ------ | ------ |
+| content | string |        |
+
+belongs_to :story
+
+
+#subject
+| Column  | Type   | Option |
+| ------- | ------ | ------ |
+| content | string |        |
+
+belongs_to :story
+
+
+#purpose
+| Column  | Type   | Option |
+| ------- | ------ | ------ |
+| content | string |        |
+
+belongs_to :story
+
+
+#comment
+| Column   | Type    | Option      |
+| -------- | ------- | ----------- |
+| user_id  | integer | null: false |
+| story_id | integer | null: false |
+| text     | text    | null: false |
+
+	belongs_to :user
+  belongs_to :story
+
+
+#like
+| Column   | Type    | Option      |
+| -------- | ------- | ----------- |
+| user_id  | integer | null: false |
+| story_id | integer | null: false |
+
+  belongs_to :user
+  belongs_to :story
+
+動作方法:
+
+ruby '2.6.5'
+gem 'rails', '~> 6.0.0'
+gem 'mysql2', '>= 0.5.3'
