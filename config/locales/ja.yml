@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: アカウント名
+      story:
+        text: 物語り
