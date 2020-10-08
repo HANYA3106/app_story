@@ -77,16 +77,14 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  // overflow: scroll;
 }
 
 .user-room-lists {
   width: 100%;
   height: 100%;
-  display: flex;
-  margin: 0 3%;
+  margin: 0 5%;
+  padding: 2% 0;
   overflow: scroll;
-  padding: 5% 0;
 }
 
 .tape{
@@ -103,11 +101,11 @@
 
 /* ポストイット */
 .postit {
-  width: 25%;
-  height: 200px;
+  width: 20%;
+  height: 220px;
   min-width: 15%;
   padding: 10px 10px;
-  margin: 0 2% 3%;
+  margin: 2% 2% 3%;
   display: inline-block;
   position: relative;
   border-bottom:1px dotted #908a60;

@@ -61,3 +61,5 @@ gem 'rails-i18n'
 gem 'pry-rails'
 
 gem 'gon'
+
+gem 'carrierwave'

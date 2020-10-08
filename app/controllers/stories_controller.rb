@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
     @subject = Subject.all
     @purpose = Purpose.all
     @tale = Tale.all
-    @ranks = Story.find(Like.group(:story_id).order('count(story_id) desc').limit(10).pluck(:story_id))
+    @ranks = Story.find(Like.group(:story_id).order("count(story_id) desc").limit(10).pluck(:story_id))
   end
 
   def new
@@ -58,6 +58,14 @@ class StoriesController < ApplicationController
     @comment = Comment.new()
     @comments = @story.comments.includes(:user)
     @like = Like.new
+  end
+
+  def rank
+    @ranks = Story.find(Like.group(:story_id).order('count(story_id) desc').limit(30).pluck(:story_id))
+    @category = Category.select(:id,:image)
+    @subject = Subject.all
+    @purpose = Purpose.all
+    @tale = Tale.all
   end
 
   private
