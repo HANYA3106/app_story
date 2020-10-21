@@ -10,7 +10,7 @@ module AppStory
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     # 日本語の言語設定
     config.i18n.default_locale = :ja
     # Settings in config/environments/* take precedence over those specified here.
