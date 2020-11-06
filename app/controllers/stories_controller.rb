@@ -13,6 +13,7 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    @category = Category.all
     @subject = Subject.offset( rand(Subject.count) ).first
     @purpose = Purpose.offset( rand(Purpose.count) ).first
     @tale = Tale.offset( rand(Tale.count) ).first

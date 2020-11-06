@@ -9,6 +9,7 @@ a {
 /* 画面上部の「多くの物語に出会えるアプリ」帯部分 */
 .title-contents {
   width: 100vw;
+  height: 45vh;
   background-image: image-url('appstory-header-1.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,14 +17,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   padding: 5vh 15vw 1vh;
   color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.9);
 }
 
 .service-title {
-  font-size: 8vh;
+  font-size: 9vh;
 }
 
 .service-explain {
@@ -191,7 +191,7 @@ a {
 
 .story-nickname {
   position: absolute;
-  bottom: 8%;
+  bottom: 5%;
   color: #000;
 }
 
@@ -202,7 +202,7 @@ a {
 
 .star-btn {
   position: absolute;
-  bottom: 1%;
+  bottom: 0;
   color: #000;
   display: flex;
   align-items: center;
@@ -248,7 +248,7 @@ a {
 .book-ranking {
   width: 100vw;
   height: 100vh;
-  padding: 3% 2%;
+  padding: 0 2%;
   background-color: rgb(249, 252, 255);
   overflow: scroll;
 }
@@ -278,9 +278,9 @@ a {
   position: relative;
 }
 .book-rank-name h2 {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: bold;
-  padding-bottom: 13px;
+  padding-bottom: px;
 }
 
 .book-rank-name span {
@@ -289,7 +289,7 @@ a {
 
 .story-rank-nickname {
   position: absolute;
-  bottom: 7%;
+  padding-top: 6%;
   color: #000;
 }
 
@@ -300,7 +300,7 @@ a {
 
 .rank-star-btn {
   position: absolute;
-  bottom: 1%;
+  padding-top: 15%;
   color: #000;
   display: flex;
   align-items: center;
