@@ -78,4 +78,4 @@ gem "aws-sdk-s3", require: false
 
 gem 'carrierwave'
 gem 'rmagick'
-gem 'fog-aws'
+gem 'fog'
