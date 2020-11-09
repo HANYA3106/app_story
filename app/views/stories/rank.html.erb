@@ -10,7 +10,7 @@
           </div>
           <%= link_to story_path(rank.id), method: :get do %>
             <div class="book-img-content">
-              <%= image_tag @category[(rank.category_id)-1].image, class: "book-img" %>
+              <%= image_tag @category[(rank.category_id)-1].image.url, class: "book-img" %>
             </div>
             <div class="rank-info">
               <h3 class="story-name">
