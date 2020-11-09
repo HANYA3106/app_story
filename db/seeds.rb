@@ -4,45 +4,45 @@ User.create!(
   password: "sample"
 )
 
-Category.create!(
-  [
-    {
-      id: 1,
-      genre: "いい話",
-      image: open("#{Rails.root}/db/category-img/book-blue.png")
-    },
-    {
-      id: 2,
-      genre: "恋の話",
-      image: open("#{Rails.root}/db/category-img/book-pink.png")
-    },
-    {
-      id: 3,
-      genre: "泣ける話",
-      image: open("#{Rails.root}/db/category-img/book-white.png")
-    },
-    {
-      id: 4,
-      genre: "不思議な話",
-      image: open("#{Rails.root}/db/category-img/book-orange.png")
-    },
-    {
-      id: 5,
-      genre: "怖い話",
-      image: open("#{Rails.root}/db/category-img/book-gray.png")
-    },
-    {
-      id: 6,
-      genre: "笑い話",
-      image: open("#{Rails.root}/db/category-img/book-red.png")
-    },
-    {
-      id: 7,
-      genre: "スッキリ話",
-      image: open("#{Rails.root}/db/category-img/book-green.png")
-    }
-  ]
-)
+# Category.create!(
+#   [
+#     {
+#       id: 1,
+#       genre: "いい話",
+#       image: open("#{Rails.root}/db/category-img/book-blue.png")
+#     },
+#     {
+#       id: 2,
+#       genre: "恋の話",
+#       image: open("#{Rails.root}/db/category-img/book-pink.png")
+#     },
+#     {
+#       id: 3,
+#       genre: "泣ける話",
+#       image: open("#{Rails.root}/db/category-img/book-white.png")
+#     },
+#     {
+#       id: 4,
+#       genre: "不思議な話",
+#       image: open("#{Rails.root}/db/category-img/book-orange.png")
+#     },
+#     {
+#       id: 5,
+#       genre: "怖い話",
+#       image: open("#{Rails.root}/db/category-img/book-gray.png")
+#     },
+#     {
+#       id: 6,
+#       genre: "笑い話",
+#       image: open("#{Rails.root}/db/category-img/book-red.png")
+#     },
+#     {
+#       id: 7,
+#       genre: "スッキリ話",
+#       image: open("#{Rails.root}/db/category-img/book-green.png")
+#     }
+#   ]
+# )
 
 Subject.create!(
   [
