@@ -47,8 +47,6 @@ group :development do
   gem 'bcrypt', '3.1.11'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener_web'
-  gem 'letter_opener', group: :development
 end
 
 group :test do
@@ -81,3 +79,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'fog'
+
+gem 'rmagick', '~> 4.1', '>= 4.1.2'
