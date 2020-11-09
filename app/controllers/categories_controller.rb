@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-
+  require 
   def new
     @category = Category.new
   end
